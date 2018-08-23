@@ -43,15 +43,25 @@ namespace linq
                 "Gregorio", "Jean-Paul", "Evangelina", "Viktor", "Jacqueline",
                 "Francisco", "Tre"
             };
-            //sets variable for redorered list from a to z
-            List<string> ascending = names.OrderBy(aToZ => aToZ).ToList();
             //sets variable reordered list from z to a
             List<string> descending = names.OrderByDescending(zToA => zToA).ToList();
-            foreach (string item in ascending)
-            { Console.WriteLine(item); }
             foreach (string item in descending)
-            { Console.WriteLine(item); }
+            {
+                Console.WriteLine(item);
+            }
+
+            // Build a collection of these numbers sorted in ascending order
+            List<int> moreNumbers = new List<int>()
+            {
+                15, 8, 21, 24, 32, 13, 30, 12, 7, 54, 48, 4, 49, 96
+            };
+            List<int> ascending = moreNumbers.OrderBy(one2three => one2three).ToList();
+            foreach (int number in ascending)
+            {
+                Console.WriteLine(number);
+            }
         }
     }
 }
+
 
