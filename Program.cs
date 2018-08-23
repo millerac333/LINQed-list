@@ -26,13 +26,32 @@ namespace linq
             {
                 15, 8, 21, 24, 32, 13, 30, 12, 7, 54, 48, 4, 49, 96
             };
-
+            //
             List<int> fourSixMultiples = numbers.Where(x => x % 4 == 0 || x % 6 == 0).ToList();
             foreach (int number in fourSixMultiples)
             {
 
                 Console.WriteLine(number);
             }
+
+            // Order these student names alphabetically, in descending order (Z to A)
+            List<string> names = new List<string>()
+            {
+                "Heather", "James", "Xavier", "Michelle", "Brian", "Nina",
+                "Kathleen", "Sophia", "Amir", "Douglas", "Zarley", "Beatrice",
+                "Theodora", "William", "Svetlana", "Charisse", "Yolanda",
+                "Gregorio", "Jean-Paul", "Evangelina", "Viktor", "Jacqueline",
+                "Francisco", "Tre"
+            };
+            //sets variable for redorered list from a to z
+            List<string> ascending = names.OrderBy(aToZ => aToZ).ToList();
+            //sets variable reordered list from z to a
+            List<string> descending = names.OrderByDescending(zToA => zToA).ToList();
+            foreach (string item in ascending)
+            { Console.WriteLine(item); }
+            foreach (string item in descending)
+            { Console.WriteLine(item); }
         }
     }
 }
+
